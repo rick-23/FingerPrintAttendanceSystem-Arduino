@@ -139,6 +139,7 @@ void loop() {
 // #################### Fingerprint Enroll Function ############################
 uint8_t getFingerprintEnroll() {
     int p = -1;
+    Serial.println("Registration Process: calling fingerprint enroll function...");
     Serial.print("Waiting for valid finger to enroll as #");
     Serial.println(id);
     lcd.clear();
@@ -297,6 +298,7 @@ uint8_t getFingerprintEnroll() {
 
 // ##################  Fingerprint Search   ###########################
 int getFingerprintIDez() {
+    Serial.println("Attendance Process: verifying fingerprint...");
     uint8_t p = finger.getImage();
     if (p != FINGERPRINT_OK) {
         lcd.clear();
