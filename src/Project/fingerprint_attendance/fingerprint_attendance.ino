@@ -57,7 +57,7 @@ void setup() {
             delay(1);
         }
     }
-    Serial.print("Initializing SD card...");
+    Serial.println("Initializing SD card...");
     if (!SD.begin(chipSelect)) {
         Serial.println("Error in initializing SD card: Card failed, or not present!!!");
         //while (1);
@@ -154,7 +154,7 @@ uint8_t getFingerprintEnroll() {
                 Serial.println("Image taken");
                 break;
             case FINGERPRINT_NOFINGER:
-                Serial.println(".");
+                Serial.print(".");
                 break;
             case FINGERPRINT_PACKETRECIEVEERR:
                 Serial.println("Communication error");
