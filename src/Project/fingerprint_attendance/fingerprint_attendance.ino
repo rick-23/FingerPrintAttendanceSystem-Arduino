@@ -323,7 +323,7 @@ int getFingerprintIDez() {
 
     p = finger.fingerFastSearch();
     if (p != FINGERPRINT_OK){
-        Serial.println("Error Finger");
+        Serial.println("Error: No matching Fingerprint found");
         digitalWrite(ledBlue,LOW);
         digitalWrite(ledRed,HIGH);
         lcd.clear();
@@ -336,7 +336,9 @@ int getFingerprintIDez() {
         return -1;
     }
 
-    Serial.print("Found ID #"); Serial.print(finger.fingerID);
-    Serial.print(" with confidence of "); Serial.println(finger.confidence);
+    Serial.print("Found ID #");
+    Serial.print(finger.fingerID);
+    Serial.print(" with confidence of ");
+    Serial.println(finger.confidence);
     return finger.fingerID;
 }
